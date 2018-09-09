@@ -1,6 +1,6 @@
 # Text Analytics Group Assignment 1 (Fall 2018)
 ## Date due:  Sep 13 by 11:59 p.m. on Canvas.  
-## This assignment has two parts, A and B. In A, you will perform some basic text mining tasks just to familiarize yourself with the nuances of putting text mining theories to practice with Python scripts. If you are more comfortable with R, please feel free to use it (however, the demos in class will only involve Python). Part B involves building and testing classification models to predict salaries from the text contained in the job descriptions.  The data for this assignment can be found at http://www.kaggle.com/c/job-salary-prediction
+This assignment has two parts, A and B. In A, you will perform some basic text mining tasks just to familiarize yourself with the nuances of putting text mining theories to practice with Python scripts. If you are more comfortable with R, please feel free to use it (however, the demos in class will only involve Python). Part B involves building and testing classification models to predict salaries from the text contained in the job descriptions.  The data for this assignment can be found at http://www.kaggle.com/c/job-salary-prediction
 
 ## Question 1
 Randomly select 2500 data points (the training dataset train_rev1 contains nearly 250k) for ease of analysis. Now perform the tasks in Part A and B. Part A (basic text mining, just to make sure you are familiar with the fundamentals)
