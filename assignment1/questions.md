@@ -18,8 +18,8 @@ Part B (predict salary from job description; the idea here is to test the predic
 In this section, you will create classification models to predict high (75th percentile and above) or low (below 75th percentile) salary from the text contained in the job descriptions.
 
 1. Ignore the job descriptions, and train a model to predict high/low salary from all the numeric columns, e.g., part time/full time, contract vs. others, type of job (a lot of dummy variables), location (instead of using a huge number of dummy variables, you can use a list of cities in England with highest cost of living, and create a 0/1 variable which is 1 if the job is in one of those cities, else 0). Use the Naïve Bayes classifier. What is the accuracy of your model?    
-Now build a classification model with text (full job description) as the only predictor. There are two versions of Naïve Bayes – binomial and multinomial; for the moment, let’s not bother about the theoretical underpinnings! You can use either one for this assignment. For all models, show the confusion matrix.
-Hint: For part B, check out   http://www.nltk.org/book/ch06.html (esp 1.3) for illustrations.
+<br> Now build a classification model with text (full job description) as the only predictor. There are two versions of Naïve Bayes – binomial and multinomial; for the moment, let’s not bother about the theoretical underpinnings! You can use either one for this assignment. For all models, show the confusion matrix.
+<br> Hint: For part B, check out   http://www.nltk.org/book/ch06.html (esp 1.3) for illustrations.
 Also look at http://nbviewer.ipython.org/gist/rjweiss/7158866 (you may have to download additional Python libraries than the ones I have mentioned before) 
 
 2. Create a classification model with all words and the bag-of-words approach. How accurate is the model (show the confusion matrix)? 
