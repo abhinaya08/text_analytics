@@ -24,7 +24,10 @@ Manually scrub data to identify relationships
 While BMW has claimed that they are the “ultimate driving machine”, is that how people feel on Edmunds? Show your analysis.   
 
 #### Task D
-What advice will you give to a (i) product manager, and (ii) marketing/advertising manager of these brands based on your analysis in Task C? For this assignment, you can assume the sentiment (e.g., that it is positive). 
+What advice will you give to a 
+<br>(i) product manager
+<br>(ii) marketing/advertising manager 
+<br>of these brands based on your analysis in Task C? For this assignment, you can assume the sentiment (e.g., that it is positive). 
 
 #### Task E
 Which is the most aspirational brand in your data in terms of people actually wanting to buy or own? Describe your analysis. What are the business implications for this brand?
