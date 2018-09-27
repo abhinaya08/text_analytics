@@ -28,22 +28,6 @@ wait = WebDriverWait(driver, 10)
 element = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="PagerBefore"]/a[8]')))
 element.click()	
 
-def clean_quotes(s):
-	quotes = df['quotes']
-	for q in quotes:
-		if q in s:
-			return(s.replace(q,""))
-		else:
-			return(s)
-
-# file = open('edmunds_sedans.txt', 'w+')
-# file.write("date \t username \t post \t quotes \n")
-# file.close()
- 
-# #file = open('edmunds_sedans.txt', 'a+')     
-# file = open('edmunds_sedans.txt', 'a')
-posts_c = []
-
 with open('edmunds_comments.csv', 'w',newline='') as file:
 	w = csv.writer(file)
 	w.writerow(["date", "username","post","quotes"])
@@ -66,10 +50,12 @@ with open('edmunds_comments.csv', 'w',newline='') as file:
 		#	w.writerow([dt.text, us.text,  post.text , quote.text])
 		
 		for dt,us,post,quote in zip(date_posted, username,posts,quotes):
-			w.writerow([dt.text, us.text, post.text,quote.text])
+			w.writerow([dt.text.encode("utf-8"), us.text.encode("utf-8"), post.text.encode("utf-8"),quote.text.encode("utf-8")])
 			#w.writerow([dt.text, us.text, post.text])
 
 		print("{} Page Processed: {}".format(i+1, datetime.datetime.now()))
+		element = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="PagerBefore"]/a[1]')))
+		element.click()	
 
 				#file.write(dt.text +"|" + us.text + "|" + post.text + "|" + quote.text + "\n")
 
