@@ -18,12 +18,14 @@ prefs = {'profile.managed_default_content_settings.images':2, 'disk-cache-size':
 option.add_experimental_option("prefs", prefs)
 chrome_path = r'C:\Users\abhin\Downloads\chromedriver_win32\chromedriver.exe'
 url = "https://forums.edmunds.com/discussion/2864/general/x/entry-level-luxury-performance-sedans"
+#url = "https://forums.edmunds.com/discussion/2864/general/x/entry-level-luxury-performance-sedans/p500"
 driver = webdriver.Chrome(chrome_path, chrome_options=option) 
 driver.minimize_window()
 driver.get(url)
 
 page_num = 1
 
+#**Selecting last page to navigate forward
 wait = WebDriverWait(driver, 10)
 element = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="PagerBefore"]/a[8]')))
 element.click()	
@@ -32,45 +34,30 @@ with open('edmunds_comments.csv', 'w',newline='') as file:
 	w = csv.writer(file)
 	w.writerow(["date", "username","post","quotes"])
 	scrape_starttime = datetime.datetime.now()
-	print("Pages Processed: {}".format(page_num, datetime.datetime.now()))
-
+	
 	for i in range(pages):
-		posts = driver.find_elements_by_css_selector(".Message.userContent")
+		posts = driver.find_elements_by_class_name("userContent")
 		quotes = driver.find_elements_by_class_name("QuoteText")
-		#posts = [str.replace(post.text, quote.text, "") if post.text==quote.text else post.text for post in posts for quote in quotes]
-		#for p in posts:
-		#	posts_c.append(p.text.replace(quote.text, ""))
-		
-		#element = driver.find_elements_by_css_selector(".Message.userContent")
-		#parent = driver.find_elements_by_css_selector(".Message.userContent")
 		username = driver.find_elements_by_class_name("Username")
-		date_posted = driver.find_elements_by_css_selector(".MItem.DateCreated")
-		#print(list(zip(date_posted, username,posts,quotes)))
-		#for dt,us,post,quote in zip(date_posted, username,posts,quotes):
-		#	w.writerow([dt.text, us.text,  post.text , quote.text])
+		date_posted = driver.find_elements_by_class_name("DateCreated")
 		
-		for dt,us,post,quote in zip(date_posted, username,posts,quotes):
-			w.writerow([dt.text.encode("utf-8"), us.text.encode("utf-8"), post.text.encode("utf-8"),quote.text.encode("utf-8")])
-			#w.writerow([dt.text, us.text, post.text])
-
+		if(len(quotes) ==0):
+			for dt,us,post in zip(date_posted, username,posts):
+				w.writerow([dt.text.encode("utf-8"), us.text.encode("utf-8"), post.text.encode("utf-8")])
+			
+		else:
+			for dt,us,post,quote in zip(date_posted, username,posts,quotes):
+				w.writerow([dt.text.encode("utf-8"), us.text.encode("utf-8"), post.text.encode("utf-8"),quote.text.encode("utf-8")])
+		
 		print("{} Page Processed: {}".format(i+1, datetime.datetime.now()))
+		#**Navigate forward
+		#element = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="PagerBefore"]/a[10]'))) #for next page
+		#element.click()
+		
+		#***Navigate backward
 		element = wait.until(EC.element_to_be_clickable((By.XPATH,'//*[@id="PagerBefore"]/a[1]')))
 		element.click()	
 
-				#file.write(dt.text +"|" + us.text + "|" + post.text + "|" + quote.text + "\n")
-
 file.close()
-
-# print("Cleaning quotes")
-# df = pd.read_csv("edmunds_comments.csv")
-# df["post_clean"] = post.map(clean_quotes)
-# df.to_csv("edmunds_comments_clean.csv")
-
-print("\nDone!\n{} Pages Processed in {}".format(page_num, datetime.datetime.now() - scrape_starttime))
-
-
+print("\nDone!\n{} Pages Processed in {}".format(pages, datetime.datetime.now() - scrape_starttime))
 driver.close()
-#df = pd.DataFrame({'date':date_posted_txt,
-#	'username': username_txt,
-#	'post':posts_txt})
-#df.to_csv("ed2.csv")
