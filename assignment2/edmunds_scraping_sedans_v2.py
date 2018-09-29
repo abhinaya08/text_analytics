@@ -43,11 +43,11 @@ with open('edmunds_comments.csv', 'w',newline='') as file:
 		
 		if(len(quotes) ==0):
 			for dt,us,post in zip(date_posted, username,posts):
-				w.writerow([dt.text, us.text, post.text])
+				w.writerow([dt.text.encode("utf-8"), us.text.encode("utf-8"), post.text.encode("utf-8")])
 			
 		else:
 			for dt,us,post,quote in zip(date_posted, username,posts,quotes):
-				w.writerow([dt.text, us.text, post.text,quote.text])
+				w.writerow([dt.text.encode("utf-8"), us.text.encode("utf-8"), post.text.encode("utf-8"),quote.text.encode("utf-8")])
 		
 		print("{} Page Processed: {}".format(i+1, datetime.datetime.now()))
 		#**Navigate forward
