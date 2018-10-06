@@ -1,4 +1,4 @@
-#== scraping Edmunds
+#== Selenium scraper Glassdoor
 
 from selenium import webdriver 
 from selenium.webdriver.common.by import By 
@@ -17,10 +17,10 @@ option.add_argument("—incognito")
 prefs = {'profile.managed_default_content_settings.images':2, 'disk-cache-size': 4096}
 option.add_experimental_option("prefs", prefs)
 chrome_path = r'C:\Users\abhin\Downloads\chromedriver_win32\chromedriver.exe'
-url = "https://forums.edmunds.com/discussion/2864/general/x/entry-level-luxury-performance-sedans"
+url = "https://www.glassdoor.com/Reviews/Amazon-Reviews-E6036.htm"
 #url = "https://forums.edmunds.com/discussion/2864/general/x/entry-level-luxury-performance-sedans/p500"
 driver = webdriver.Chrome(chrome_path, chrome_options=option) 
-driver.minimize_window()
+#driver.minimize_window()
 driver.get(url)
 
 page_num = 1
