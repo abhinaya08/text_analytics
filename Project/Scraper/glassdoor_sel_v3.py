@@ -12,7 +12,7 @@ def site_login():
     driver.get("https://www.glassdoor.com/profile/login_input.htm?userOriginHook=HEADER_SIGNIN_LINK")
     element = wait.until(EC.element_to_be_clickable((By.XPATH,"""//*[@id="InlineLoginModule"]/div/div/div/div[2]/div[2]/form/button""")))
     driver.find_element_by_name("username").send_keys("abhinayaanand@gmail.com")
-    driver.find_element_by_name("password").send_keys("scraper123")
+    driver.find_element_by_name("password").send_keys("password")
     #element = wait.until(EC.element_to_be_clickable((By.XPATH,"""//*[@id="InlineLoginModule"]/div/div/div/div[2]/div[2]/form/button""")))
     element.click()	
     #driver.find_element_by_xpath("""//*[@id="InlineLoginModule"]/div/div/div/div[2]/div[2]/form/button""").click()
