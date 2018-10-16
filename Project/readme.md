@@ -9,4 +9,4 @@ Following are the different pieces of analysis we did in order to evaluate how e
 
 1. Wordcloud: 
 Which are the most frequently occuring words when employees discuss the pros and cons of their respective companies?
-Click for code<a https://github.com/abhinaya08/text_analytics/blob/master/Project/1_wordcloud.ipynb>
+Click for [code]<a https://github.com/abhinaya08/text_analytics/blob/master/Project/1_wordcloud.ipynb>
