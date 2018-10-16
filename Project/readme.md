@@ -45,6 +45,7 @@ We used LDA to do model for topics in unstructured review data. This helps us in
 ### 4. Cosine Similarity
 
 Comparing company values to positive and negative reviews on Glassdoor. This enables us to classify the sentiment associated with company values. 
+
 [Code here](https://github.com/abhinaya08/text_analytics/blob/master/Project/4_Sentiment%20and%20cosine%20similarity.ipynb)
 
 ### 5. Sentiment Analysis

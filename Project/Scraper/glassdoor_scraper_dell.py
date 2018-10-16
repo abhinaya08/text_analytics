@@ -180,8 +180,8 @@ def scrape(base_url, workbook, name):
 
 
 
-url_link = "https://www.glassdoor.com/Reviews/Dell-Reviews-E1327_P2.htm"
+url_link = "https://www.glassdoor.com/Reviews/Apple-Reviews-E1138_P2.htm"
 company_info = xlwt.Workbook(encoding="utf-8")
-name = "dell.csv"
+name = "apple_new.csv"
 
 scrape(url_link, company_info, name)
