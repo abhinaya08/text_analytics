@@ -10,6 +10,7 @@ Following are the different pieces of analysis we did in order to evaluate how e
 ### 1. Wordcloud: 
 
 Which are the most frequently occuring words when employees discuss the pros and cons of their respective companies?
+
 [Code here](https://github.com/abhinaya08/text_analytics/blob/master/Project/1_wordcloud.ipynb)
 
 ### 2. Lift: 
@@ -38,6 +39,7 @@ Calculate lift scores by interacting "Pros and Cons Attributes" with "Company Ca
 ### 3. Topic Modeling
 
 We used LDA to do model for topics in unstructured review data. This helps us in identifying what employees percieve to be the positives and negatives of their respective companies
+
 [Code here](https://github.com/abhinaya08/text_analytics/blob/master/Project/3_Topic%20Modeling.ipynb)
 
 ### 4. Cosine Similarity
@@ -50,4 +52,5 @@ Comparing company values to positive and negative reviews on Glassdoor. This ena
 How do employees across job titles and locations feel about the company?
 
 We combine the positive and negative ratings to get a true assessment of employee sentiment
+
 [Code here](https://github.com/abhinaya08/text_analytics/blob/master/Project/4_Sentiment%20and%20cosine%20similarity.ipynb)
