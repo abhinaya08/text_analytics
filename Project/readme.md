@@ -55,3 +55,7 @@ How do employees across job titles and locations feel about the company?
 We combine the positive and negative ratings to get a true assessment of employee sentiment
 
 [Code here](https://github.com/abhinaya08/text_analytics/blob/master/Project/4_Sentiment%20and%20cosine%20similarity.ipynb)
+
+## Insights
+
+[Here](https://github.com/abhinaya08/text_analytics/blob/master/Project/glassdoor%20ppt%20md.pdf)
